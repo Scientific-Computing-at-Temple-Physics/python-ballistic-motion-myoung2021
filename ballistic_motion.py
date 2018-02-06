@@ -9,12 +9,6 @@ import math as ma
 import matplotlib
 import matplotlib.pyplot as plot
 
-#y=height x=distance, v=velocity, a=acceleration, i=initial, f=final
-time_list=[]
-x_list=[]
-y_list=[]
-vy_list=[]
-
 #inputs
 yi=float(raw_input("Initial Height [m]: "))
 vi=float(raw_input("Initial Velocity [m/s]: "))
@@ -32,7 +26,13 @@ y_now=yi
 x_now=0
 t=0
 
-#arrays
+#lists
+    #y=height x=distance, v=velocity, a=acceleration, i=initial, f=final
+time_list=[]
+x_list=[]
+y_list=[]
+vy_list=[]
+
 while y_now>=0: 
     time_list.append(round(t*timestep,5))
     vy_list.append(round(vy_now,5))
@@ -42,13 +42,6 @@ while y_now>=0:
     x_list.append(round(x_now,5))
     x_now=x_now+vx*timestep
     t=t+1
-
-    
-"""       
-print time_list
-print vy_list
-print x_list
-print y_list
 """
 
 plot.plot(x_list,y_list)
