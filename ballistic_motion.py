@@ -23,14 +23,16 @@ theta=45
 a=-9.81
 
 #math mods
-vx=vi*ma.cos(theta)
-viy=vi*ma.sin(theta)
+vx=vi*ma.cos(theta*ma.pi/180)
+viy=vi*ma.sin(theta*ma.pi/180)
 
 vy_now=viy
 y_now=yi
 x_now=0
+t=0
+
 #arrays
-for t in range(100):
+while y_now>=0: 
     time_list.append(round(t*timestep,5))
     vy_list.append(round(vy_now,5))
     y_list.append(round(y_now,5))
@@ -38,13 +40,23 @@ for t in range(100):
     vy_now=vy_now+a*timestep
     x_list.append(round(x_now,5))
     x_now=x_now+vx*timestep
+    t=t+1
+
     
-    
-"""    
+"""       
 print time_list
 print vy_list
 print x_list
 print y_list
 """
+
 plot.plot(x_list,y_list)
+
+#from https://matplotlib.org/examples/pylab_examples/equal_aspect_ratio.html
+plot.xlabel("Distance (m)")
+plot.ylabel("Height (m)")
+plot.title("Ballistic Motion")
+plot.grid(True)
+plot.axes().set_aspect("equal", "datalim")
+
 plot.show()
