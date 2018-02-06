@@ -16,11 +16,12 @@ y_list=[]
 vy_list=[]
 
 #inputs
-timestep=.05
-yi=10
-vi=10
-theta=45
-a=-9.81
+yi=float(raw_input("Initial Height [m]: "))
+vi=float(raw_input("Initial Velocity [m/s]: "))
+theta=float(raw_input("Angle [°]: "))
+a=float(raw_input("Acceleration [m/s^2](Be careful of direction): "))
+timestep=float(raw_input("Timestep [s]: "))
+
 
 #math mods
 vx=vi*ma.cos(theta*ma.pi/180)
