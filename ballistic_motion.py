@@ -42,7 +42,7 @@ while y_now>=0:
     x_list.append(round(x_now,5))
     x_now=x_now+vx*timestep
     t=t+1
-"""
+
 
 plot.plot(x_list,y_list)
 
